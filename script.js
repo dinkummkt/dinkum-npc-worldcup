@@ -1,11 +1,10 @@
-
 let currentRound = [];
 let nextRound = [];
 let index = 0;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1)];
+        const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
@@ -29,7 +28,7 @@ function showMatch() {
     [npc1, npc2].forEach(npc => {
         const card = document.createElement('div');
         card.className = 'card';
-        card.innerHTML = `<img src="\${npc.image}" alt="\${npc.name}"><p>\${npc.name}</p>`;
+        card.innerHTML = `<img src="${npc.image}" alt="${npc.name}"><p>${npc.name}</p>`;
         card.onclick = () => {
             nextRound.push(npc);
             index += 2;
